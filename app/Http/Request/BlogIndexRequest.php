@@ -11,10 +11,8 @@ class BlogIndexRequest extends FormRequest
    */
   public function rules()
   {
-    return [
-      'title' => 'required',
-      'content' => 'nullable'
-    ];
+
+    
   }
 
 }
