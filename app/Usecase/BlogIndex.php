@@ -10,14 +10,16 @@ use Illuminate\Support\Facades\DB;
 
     public function index() 
     {
-        $blog = DB::select("
+        $blog = DB::select(
+          "
         SELECT
             b.id,
             b.title,
             b.content
         FROM
             blogs AS b
-        ");
+        "
+      );
         return ['blog' => $blog];
     }
   }
