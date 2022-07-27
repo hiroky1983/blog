@@ -4,8 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use function PHPUnit\Framework\isEmpty;
-
 return new class extends Migration
 {
     /**
@@ -15,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('blogs')) {
-            Schema::create('blogs', function (Blueprint $table) {
-                $table->id();
-                $table->string('title', 100);
-                $table->text('content');
-                $table->timestamps();
-            });
-        }
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
